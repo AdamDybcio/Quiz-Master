@@ -11,6 +11,10 @@ class QuizRunState {
 
   final List<String> disabledAnswers;
 
+  final Duration totalElapsedTime;
+  final List<int> answerTimes;
+  final List<String?> userAnswers;
+
   QuizRunState({
     required this.questions,
     this.currentIndex = 0,
@@ -20,6 +24,9 @@ class QuizRunState {
     this.lifelineSkipAvailable = true,
     this.showResults = false,
     this.disabledAnswers = const [],
+    this.totalElapsedTime = Duration.zero,
+    this.answerTimes = const [],
+    this.userAnswers = const [],
   });
 
   QuizRunState copyWith({
@@ -31,6 +38,9 @@ class QuizRunState {
     bool? lifelineSkipAvailable,
     bool? showResults,
     List<String>? disabledAnswers,
+    Duration? totalElapsedTime,
+    List<int>? answerTimes,
+    List<String?>? userAnswers,
   }) {
     return QuizRunState(
       questions: questions ?? this.questions,
@@ -43,6 +53,9 @@ class QuizRunState {
           lifelineSkipAvailable ?? this.lifelineSkipAvailable,
       showResults: showResults ?? this.showResults,
       disabledAnswers: disabledAnswers ?? this.disabledAnswers,
+      totalElapsedTime: totalElapsedTime ?? this.totalElapsedTime,
+      answerTimes: answerTimes ?? this.answerTimes,
+      userAnswers: userAnswers ?? this.userAnswers,
     );
   }
 }

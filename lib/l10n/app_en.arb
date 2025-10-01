@@ -24,5 +24,13 @@
     "correct": "Correct",
     "accuracy": "Accuracy",
     "totalTime": "Total Time",
-    "avgTime": "Avg Time/Question"
+    "avgTime": "Avg Time/Question",
+    "answerReview": "Answer Review",
+    "yourAnswer": "Your answer",
+    "correctAnswer": "Correct answer",
+    "noAnswer": "No answer",
+    "playAgain": "Play Again",
+    "question": "Question",
+    "questionOf": "of",
+    "skip": "Skip"
 }

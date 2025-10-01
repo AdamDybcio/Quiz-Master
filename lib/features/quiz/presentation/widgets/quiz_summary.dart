@@ -1,16 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/quiz/domain/entity/question.dart';
+import 'package:quiz_master/features/quiz/domain/entity/quiz_params.dart';
+import 'package:quiz_master/features/quiz/presentation/blocs/quiz/quiz_cubit.dart';
+import 'package:quiz_master/features/quiz/presentation/pages/quiz_page.dart';
+import 'package:quiz_master/features/quiz/presentation/widgets/home_button.dart'
+    show HomeButton;
+import 'package:quiz_master/features/quiz/presentation/widgets/quiz_answer_review.dart';
 import 'package:quiz_master/features/quiz/presentation/widgets/quiz_summary_stats.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 
 class QuizSummary extends StatefulWidget {
   final int score;
   final int totalQuestions;
+  final Duration totalTime;
+  final List<int> answerTimes;
+  final List<Question> questions;
+  final List<String?> userAnswers;
 
   const QuizSummary({
     super.key,
     required this.score,
     required this.totalQuestions,
+    required this.totalTime,
+    required this.answerTimes,
+    required this.questions,
+    required this.userAnswers,
   });
 
   @override
@@ -45,7 +62,7 @@ class _QuizSummaryState extends State<QuizSummary>
         ? widget.score / widget.totalQuestions
         : 0;
 
-    return Center(
+    return SizedBox.expand(
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -55,8 +72,53 @@ class _QuizSummaryState extends State<QuizSummary>
             QuizSummaryStats(
               score: widget.score,
               totalQuestions: widget.totalQuestions,
-              totalTime: Duration(seconds: 8),
+              totalTime: widget.totalTime,
+              answerTimes: widget.answerTimes,
             ),
+            const SizedBox(height: 24),
+            QuizAnswerReview(
+              questions: widget.questions,
+              userAnswers: widget.userAnswers,
+            ),
+            const SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 48,
+                      vertical: 24,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  icon: const FaIcon(FontAwesomeIcons.rotateLeft),
+                  label: Text(
+                    AppLocalizations.of(context)!.playAgain,
+                    style: const TextStyle(fontSize: 14),
+                  ),
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => BlocProvider(
+                          create: (_) =>
+                              sl<QuizCubit>()..loadQuiz(QuizParams(amount: 10)),
+                          child: QuizPage(),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(width: 16),
+                HomeButton(),
+              ],
+            ),
+            const SizedBox(height: 24),
           ],
         ),
       ),

@@ -6,6 +6,7 @@ import 'package:quiz_master/features/quiz/presentation/blocs/quiz_run/quiz_run_s
 
 class QuizRunCubit extends Cubit<QuizRunState> {
   Timer? _timer;
+  int _questionStartTime = 30;
 
   QuizRunCubit(List<Question> questions)
     : super(QuizRunState(questions: questions)) {
@@ -15,21 +16,56 @@ class QuizRunCubit extends Cubit<QuizRunState> {
   void _startTimer() {
     _timer?.cancel();
     emit(state.copyWith(timeLeft: 30));
+    _questionStartTime = 30;
+
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (state.timeLeft > 1) {
-        emit(state.copyWith(timeLeft: state.timeLeft - 1));
+        emit(
+          state.copyWith(
+            timeLeft: state.timeLeft - 1,
+            totalElapsedTime:
+                state.totalElapsedTime + const Duration(seconds: 1),
+          ),
+        );
       } else {
+        _recordAnswerTime();
         _timer?.cancel();
         nextQuestion();
       }
     });
   }
 
+  void _recordAnswerTime() {
+    final elapsedForThisQ = _questionStartTime - state.timeLeft;
+    final updatedTimes = List<int>.from(state.answerTimes)
+      ..add(elapsedForThisQ);
+    emit(state.copyWith(answerTimes: updatedTimes));
+  }
+
   void answer(String answer) {
     final q = state.questions[state.currentIndex];
     final isCorrect = answer == q.correctAnswer;
 
-    emit(state.copyWith(score: isCorrect ? state.score + 1 : state.score));
+    final updatedAnswers = List<String?>.from(state.userAnswers);
+    if (updatedAnswers.length < state.questions.length) {
+      updatedAnswers.addAll(
+        List<String?>.filled(
+          state.questions.length - updatedAnswers.length,
+          null,
+        ),
+      );
+    }
+    updatedAnswers[state.currentIndex] = answer;
+
+    _recordAnswerTime();
+
+    emit(
+      state.copyWith(
+        score: isCorrect ? state.score + 1 : state.score,
+        userAnswers: updatedAnswers,
+      ),
+    );
+
     nextQuestion();
   }
 

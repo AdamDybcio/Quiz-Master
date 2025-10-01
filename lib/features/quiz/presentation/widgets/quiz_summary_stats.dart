@@ -8,12 +8,14 @@ class QuizSummaryStats extends StatelessWidget {
   final int score;
   final int totalQuestions;
   final Duration totalTime;
+  final List<int> answerTimes;
 
   const QuizSummaryStats({
     super.key,
     required this.score,
     required this.totalQuestions,
     required this.totalTime,
+    required this.answerTimes,
   });
 
   @override
@@ -21,8 +23,8 @@ class QuizSummaryStats extends StatelessWidget {
     final accuracy = totalQuestions > 0
         ? (score / totalQuestions * 100).round()
         : 0;
-    final avgTimePerQuestion = totalQuestions > 0
-        ? totalTime.inSeconds ~/ totalQuestions
+    final avgTimePerQuestion = answerTimes.isNotEmpty
+        ? answerTimes.reduce((a, b) => a + b) ~/ answerTimes.length
         : 0;
 
     Widget buildStatTile(

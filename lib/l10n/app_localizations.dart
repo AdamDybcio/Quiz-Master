@@ -249,6 +249,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Avg Time/Question'**
   String get avgTime;
+
+  /// No description provided for @answerReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Review'**
+  String get answerReview;
+
+  /// No description provided for @yourAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Your answer'**
+  String get yourAnswer;
+
+  /// No description provided for @correctAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct answer'**
+  String get correctAnswer;
+
+  /// No description provided for @noAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer'**
+  String get noAnswer;
+
+  /// No description provided for @playAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Play Again'**
+  String get playAgain;
+
+  /// No description provided for @question.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get question;
+
+  /// No description provided for @questionOf.
+  ///
+  /// In en, this message translates to:
+  /// **'of'**
+  String get questionOf;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
 }
 
 class _AppLocalizationsDelegate

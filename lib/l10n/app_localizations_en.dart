@@ -87,4 +87,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get avgTime => 'Avg Time/Question';
+
+  @override
+  String get answerReview => 'Answer Review';
+
+  @override
+  String get yourAnswer => 'Your answer';
+
+  @override
+  String get correctAnswer => 'Correct answer';
+
+  @override
+  String get noAnswer => 'No answer';
+
+  @override
+  String get playAgain => 'Play Again';
+
+  @override
+  String get question => 'Question';
+
+  @override
+  String get questionOf => 'of';
+
+  @override
+  String get skip => 'Skip';
 }
