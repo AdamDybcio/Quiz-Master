@@ -1,0 +1,42 @@
+name: quiz_master
+description: "A quiz app for learning and fun."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  path_provider: ^2.1.5
+  hydrated_bloc: ^10.1.1
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.7
+  get_it: ^8.2.0
+
+  # UI and Theming
+  cupertino_icons: ^1.0.8
+  font_awesome_flutter: ^10.10.0
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  # Quiz API
+  http: ^1.5.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
