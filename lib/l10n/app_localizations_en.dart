@@ -163,4 +163,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get level => 'Level';
+
+  @override
+  String get browse => 'Browse';
+
+  @override
+  String get achievements => 'Achievements';
 }

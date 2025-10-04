@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
 import 'package:quiz_master/core/presentation/widgets/theme_toggle_button.dart';
-import 'package:quiz_master/features/home/presentation/widgets/categories_section.dart';
-import 'package:quiz_master/features/home/presentation/widgets/home_page_footer.dart';
-import 'package:quiz_master/features/home/presentation/widgets/home_page_header.dart';
-import 'package:quiz_master/features/home/presentation/widgets/info_card_section.dart';
-import 'package:quiz_master/features/home/presentation/widgets/quick_play_button.dart';
 import 'package:quiz_master/features/leveling/presentation/widgets/level_card.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 import 'package:quiz_master/utils/helpers.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class BrowsePage extends StatelessWidget {
+  const BrowsePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,14 +71,7 @@ class HomePage extends StatelessWidget {
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  HomePageHeader(),
-                  QuickPlayButton(),
-                  const SizedBox(height: 24),
-                  InfoCardsSection(),
-                  const CategoriesSection(),
-                  const HomePageFooter(),
-                ],
+                children: [],
               ),
             ),
           ),

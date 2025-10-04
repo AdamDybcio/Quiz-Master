@@ -48,5 +48,7 @@
     "resultVeryPoor": "Don’t give up! 💫",
     "experienceEarned": "XP Earned",
     "difficulty": "Difficulty",
-    "level": "Level"
+    "level": "Level",
+    "browse": "Browse",
+    "achievements": "Achievements"
 }

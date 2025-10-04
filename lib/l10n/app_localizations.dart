@@ -393,6 +393,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Level'**
   String get level;
+
+  /// No description provided for @browse.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse'**
+  String get browse;
+
+  /// No description provided for @achievements.
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements'**
+  String get achievements;
 }
 
 class _AppLocalizationsDelegate

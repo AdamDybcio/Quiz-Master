@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quiz_master/core/presentation/blocs/page_index_cubit.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
 import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/browse/presentation/pages/browse_page.dart';
 import 'package:quiz_master/features/home/presentation/pages/home_page.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +14,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pages = const [HomePage(), HomePage()];
+    final pages = const [HomePage(), BrowsePage(), HomePage()];
 
     return Responsive(
       mobile: BlocBuilder<PageIndexCubit, int>(
@@ -35,8 +36,12 @@ class MainScreen extends StatelessWidget {
                   label: AppLocalizations.of(context)!.home,
                 ),
                 BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.school),
-                  label: 'Other',
+                  icon: FaIcon(FontAwesomeIcons.magnifyingGlass),
+                  label: AppLocalizations.of(context)!.browse,
+                ),
+                BottomNavigationBarItem(
+                  icon: FaIcon(FontAwesomeIcons.trophy),
+                  label: AppLocalizations.of(context)!.achievements,
                 ),
               ],
             ),
@@ -65,9 +70,13 @@ class MainScreen extends StatelessWidget {
                       icon: FaIcon(FontAwesomeIcons.solidHouse),
                       label: Text(AppLocalizations.of(context)!.home),
                     ),
-                    const NavigationRailDestination(
-                      icon: FaIcon(FontAwesomeIcons.school),
-                      label: Text('Other'),
+                    NavigationRailDestination(
+                      icon: FaIcon(FontAwesomeIcons.magnifyingGlass),
+                      label: Text(AppLocalizations.of(context)!.browse),
+                    ),
+                    NavigationRailDestination(
+                      icon: FaIcon(FontAwesomeIcons.trophy),
+                      label: Text(AppLocalizations.of(context)!.achievements),
                     ),
                   ],
                 ),
@@ -99,9 +108,13 @@ class MainScreen extends StatelessWidget {
                       icon: FaIcon(FontAwesomeIcons.solidHouse),
                       label: Text(AppLocalizations.of(context)!.home),
                     ),
-                    const NavigationRailDestination(
-                      icon: FaIcon(FontAwesomeIcons.school),
-                      label: Text('Other'),
+                    NavigationRailDestination(
+                      icon: FaIcon(FontAwesomeIcons.magnifyingGlass),
+                      label: Text(AppLocalizations.of(context)!.browse),
+                    ),
+                    NavigationRailDestination(
+                      icon: FaIcon(FontAwesomeIcons.trophy),
+                      label: Text(AppLocalizations.of(context)!.achievements),
                     ),
                   ],
                 ),
