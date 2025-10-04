@@ -3,7 +3,7 @@ name: Flutter CI
 on:
   push:
     branches:
-      - "**"
+      - '**'
   pull_request:
     branches:
       - master
