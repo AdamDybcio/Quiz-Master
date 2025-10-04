@@ -405,6 +405,318 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Achievements'**
   String get achievements;
+
+  /// No description provided for @browseHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search quizzes by title or description...'**
+  String get browseHint;
+
+  /// No description provided for @browseSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore our curated collection of quizzes and level up your knowledge!'**
+  String get browseSubtitle;
+
+  /// No description provided for @browseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Quizzes'**
+  String get browseTitle;
+
+  /// No description provided for @quizUltimateGeneralKnowledge.
+  ///
+  /// In en, this message translates to:
+  /// **'Ultimate General Knowledge'**
+  String get quizUltimateGeneralKnowledge;
+
+  /// No description provided for @quizFamousBooksAuthors.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous Books & Authors'**
+  String get quizFamousBooksAuthors;
+
+  /// No description provided for @quizClassicMovieTrivia.
+  ///
+  /// In en, this message translates to:
+  /// **'Classic Movie Trivia'**
+  String get quizClassicMovieTrivia;
+
+  /// No description provided for @quizMusicLegendsLyrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Music Legends & Lyrics'**
+  String get quizMusicLegendsLyrics;
+
+  /// No description provided for @quizMusicalsTheatresMix.
+  ///
+  /// In en, this message translates to:
+  /// **'Musicals & Theatres Mix'**
+  String get quizMusicalsTheatresMix;
+
+  /// No description provided for @quizTvSeriesCharacters.
+  ///
+  /// In en, this message translates to:
+  /// **'TV Series & Characters'**
+  String get quizTvSeriesCharacters;
+
+  /// No description provided for @quizVideoGameUniverse.
+  ///
+  /// In en, this message translates to:
+  /// **'Video Game Universe'**
+  String get quizVideoGameUniverse;
+
+  /// No description provided for @quizBoardGamesChallenge.
+  ///
+  /// In en, this message translates to:
+  /// **'Board Games Challenge'**
+  String get quizBoardGamesChallenge;
+
+  /// No description provided for @quizScienceNatureInsights.
+  ///
+  /// In en, this message translates to:
+  /// **'Science & Nature Insights'**
+  String get quizScienceNatureInsights;
+
+  /// No description provided for @quizComputerScienceBasics.
+  ///
+  /// In en, this message translates to:
+  /// **'Computer Science Basics'**
+  String get quizComputerScienceBasics;
+
+  /// No description provided for @quizMathematicalMinds.
+  ///
+  /// In en, this message translates to:
+  /// **'Mathematical Minds'**
+  String get quizMathematicalMinds;
+
+  /// No description provided for @quizGreekNorseMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'Greek & Norse Mythology'**
+  String get quizGreekNorseMythology;
+
+  /// No description provided for @quizUltimateSportsTrivia.
+  ///
+  /// In en, this message translates to:
+  /// **'Ultimate Sports Trivia'**
+  String get quizUltimateSportsTrivia;
+
+  /// No description provided for @quizWorldGeographyExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'World Geography Explorer'**
+  String get quizWorldGeographyExplorer;
+
+  /// No description provided for @quizWorldHistoryEssentials.
+  ///
+  /// In en, this message translates to:
+  /// **'World History Essentials'**
+  String get quizWorldHistoryEssentials;
+
+  /// No description provided for @quizPoliticsWorldLeaders.
+  ///
+  /// In en, this message translates to:
+  /// **'Politics & World Leaders'**
+  String get quizPoliticsWorldLeaders;
+
+  /// No description provided for @quizMasterpiecesArt.
+  ///
+  /// In en, this message translates to:
+  /// **'Masterpieces of Art'**
+  String get quizMasterpiecesArt;
+
+  /// No description provided for @quizCelebritiesPopCulture.
+  ///
+  /// In en, this message translates to:
+  /// **'Celebrities & Pop Culture'**
+  String get quizCelebritiesPopCulture;
+
+  /// No description provided for @quizAnimalsAroundWorld.
+  ///
+  /// In en, this message translates to:
+  /// **'Animals Around the World'**
+  String get quizAnimalsAroundWorld;
+
+  /// No description provided for @quizCarsBikesMachines.
+  ///
+  /// In en, this message translates to:
+  /// **'Cars, Bikes & Machines'**
+  String get quizCarsBikesMachines;
+
+  /// No description provided for @quizComicBooksUniverse.
+  ///
+  /// In en, this message translates to:
+  /// **'Comic Books Universe'**
+  String get quizComicBooksUniverse;
+
+  /// No description provided for @quizCoolTechGadgets.
+  ///
+  /// In en, this message translates to:
+  /// **'Cool Tech & Gadgets'**
+  String get quizCoolTechGadgets;
+
+  /// No description provided for @quizAnimeWorlds.
+  ///
+  /// In en, this message translates to:
+  /// **'Anime Worlds Quiz'**
+  String get quizAnimeWorlds;
+
+  /// No description provided for @quizCartoonsAnimations.
+  ///
+  /// In en, this message translates to:
+  /// **'Cartoons & Animations'**
+  String get quizCartoonsAnimations;
+
+  /// No description provided for @descUltimateGeneralKnowledge.
+  ///
+  /// In en, this message translates to:
+  /// **'Test your brain across a wide range of topics from science to pop culture.'**
+  String get descUltimateGeneralKnowledge;
+
+  /// No description provided for @descFamousBooksAuthors.
+  ///
+  /// In en, this message translates to:
+  /// **'Can you match famous books to their legendary authors?'**
+  String get descFamousBooksAuthors;
+
+  /// No description provided for @descClassicMovieTrivia.
+  ///
+  /// In en, this message translates to:
+  /// **'Dive into the world of cinema and recall timeless classics.'**
+  String get descClassicMovieTrivia;
+
+  /// No description provided for @descMusicLegendsLyrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Guess songs, artists, and iconic lyrics from music history.'**
+  String get descMusicLegendsLyrics;
+
+  /// No description provided for @descMusicalsTheatresMix.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge your memory of stage shows and legendary musicals.'**
+  String get descMusicalsTheatresMix;
+
+  /// No description provided for @descTvSeriesCharacters.
+  ///
+  /// In en, this message translates to:
+  /// **'How well do you know your favorite TV shows and characters?'**
+  String get descTvSeriesCharacters;
+
+  /// No description provided for @descVideoGameUniverse.
+  ///
+  /// In en, this message translates to:
+  /// **'From retro games to modern hits — test your gaming knowledge!'**
+  String get descVideoGameUniverse;
+
+  /// No description provided for @descBoardGamesChallenge.
+  ///
+  /// In en, this message translates to:
+  /// **'Chess, Monopoly, and more — explore board games trivia.'**
+  String get descBoardGamesChallenge;
+
+  /// No description provided for @descScienceNatureInsights.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover fascinating facts about science, nature, and the universe.'**
+  String get descScienceNatureInsights;
+
+  /// No description provided for @descComputerScienceBasics.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore coding, algorithms, and the evolution of computers.'**
+  String get descComputerScienceBasics;
+
+  /// No description provided for @descMathematicalMinds.
+  ///
+  /// In en, this message translates to:
+  /// **'Numbers, formulas, and logic — challenge your math skills.'**
+  String get descMathematicalMinds;
+
+  /// No description provided for @descGreekNorseMythology.
+  ///
+  /// In en, this message translates to:
+  /// **'Meet gods, heroes, and myths from ancient Greece and Norse lands.'**
+  String get descGreekNorseMythology;
+
+  /// No description provided for @descUltimateSportsTrivia.
+  ///
+  /// In en, this message translates to:
+  /// **'From football to Olympics — test your sports knowledge!'**
+  String get descUltimateSportsTrivia;
+
+  /// No description provided for @descWorldGeographyExplorer.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel around the world with geography and landmark quizzes.'**
+  String get descWorldGeographyExplorer;
+
+  /// No description provided for @descWorldHistoryEssentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Key events and figures that shaped our world — how many can you name?'**
+  String get descWorldHistoryEssentials;
+
+  /// No description provided for @descPoliticsWorldLeaders.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn about global leaders, ideologies, and political systems.'**
+  String get descPoliticsWorldLeaders;
+
+  /// No description provided for @descMasterpiecesArt.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous artists, movements, and timeless masterpieces await.'**
+  String get descMasterpiecesArt;
+
+  /// No description provided for @descCelebritiesPopCulture.
+  ///
+  /// In en, this message translates to:
+  /// **'From Hollywood to TikTok — pop culture at its finest.'**
+  String get descCelebritiesPopCulture;
+
+  /// No description provided for @descAnimalsAroundWorld.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn fun and amazing facts about animals across the globe.'**
+  String get descAnimalsAroundWorld;
+
+  /// No description provided for @descCarsBikesMachines.
+  ///
+  /// In en, this message translates to:
+  /// **'Engines, brands, and innovations — for every motorhead.'**
+  String get descCarsBikesMachines;
+
+  /// No description provided for @descComicBooksUniverse.
+  ///
+  /// In en, this message translates to:
+  /// **'Marvel, DC, and beyond — heroes, villains, and stories.'**
+  String get descComicBooksUniverse;
+
+  /// No description provided for @descCoolTechGadgets.
+  ///
+  /// In en, this message translates to:
+  /// **'Test your knowledge of modern inventions and gadgets.'**
+  String get descCoolTechGadgets;
+
+  /// No description provided for @descAnimeWorlds.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore anime worlds, characters, and legendary series.'**
+  String get descAnimeWorlds;
+
+  /// No description provided for @descCartoonsAnimations.
+  ///
+  /// In en, this message translates to:
+  /// **'From Disney to Pixar — classic and modern animation trivia.'**
+  String get descCartoonsAnimations;
+
+  /// No description provided for @browseNoCoursesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No courses found matching your search.'**
+  String get browseNoCoursesFound;
 }
 
 class _AppLocalizationsDelegate

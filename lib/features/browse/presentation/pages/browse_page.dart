@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
 import 'package:quiz_master/core/presentation/widgets/theme_toggle_button.dart';
+import 'package:quiz_master/features/browse/presentation/widgets/browse_content.dart';
+import 'package:quiz_master/features/browse/presentation/widgets/quiz_grid.dart';
 import 'package:quiz_master/features/leveling/presentation/widgets/level_card.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 import 'package:quiz_master/utils/helpers.dart';
@@ -71,7 +73,22 @@ class BrowsePage extends StatelessWidget {
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [],
+                children: [
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 900),
+                    child: BrowseContent(),
+                  ),
+                  SizedBox(height: 48),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 1200),
+                    child: Responsive(
+                      mobile: QuizGrid(columns: 1),
+                      tablet: QuizGrid(columns: 2),
+                      desktop: QuizGrid(columns: 3),
+                    ),
+                  ),
+                  SizedBox(height: 32),
+                ],
               ),
             ),
           ),

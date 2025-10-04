@@ -31,6 +31,7 @@ class LevelingDifficultyPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  const SizedBox(height: 24),
                   Text(
                     AppLocalizations.of(context)!.chooseYourDifficulty,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48),

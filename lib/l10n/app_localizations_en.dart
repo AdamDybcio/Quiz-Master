@@ -169,4 +169,185 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievements => 'Achievements';
+
+  @override
+  String get browseHint => 'Search quizzes by title or description...';
+
+  @override
+  String get browseSubtitle =>
+      'Explore our curated collection of quizzes and level up your knowledge!';
+
+  @override
+  String get browseTitle => 'Browse Quizzes';
+
+  @override
+  String get quizUltimateGeneralKnowledge => 'Ultimate General Knowledge';
+
+  @override
+  String get quizFamousBooksAuthors => 'Famous Books & Authors';
+
+  @override
+  String get quizClassicMovieTrivia => 'Classic Movie Trivia';
+
+  @override
+  String get quizMusicLegendsLyrics => 'Music Legends & Lyrics';
+
+  @override
+  String get quizMusicalsTheatresMix => 'Musicals & Theatres Mix';
+
+  @override
+  String get quizTvSeriesCharacters => 'TV Series & Characters';
+
+  @override
+  String get quizVideoGameUniverse => 'Video Game Universe';
+
+  @override
+  String get quizBoardGamesChallenge => 'Board Games Challenge';
+
+  @override
+  String get quizScienceNatureInsights => 'Science & Nature Insights';
+
+  @override
+  String get quizComputerScienceBasics => 'Computer Science Basics';
+
+  @override
+  String get quizMathematicalMinds => 'Mathematical Minds';
+
+  @override
+  String get quizGreekNorseMythology => 'Greek & Norse Mythology';
+
+  @override
+  String get quizUltimateSportsTrivia => 'Ultimate Sports Trivia';
+
+  @override
+  String get quizWorldGeographyExplorer => 'World Geography Explorer';
+
+  @override
+  String get quizWorldHistoryEssentials => 'World History Essentials';
+
+  @override
+  String get quizPoliticsWorldLeaders => 'Politics & World Leaders';
+
+  @override
+  String get quizMasterpiecesArt => 'Masterpieces of Art';
+
+  @override
+  String get quizCelebritiesPopCulture => 'Celebrities & Pop Culture';
+
+  @override
+  String get quizAnimalsAroundWorld => 'Animals Around the World';
+
+  @override
+  String get quizCarsBikesMachines => 'Cars, Bikes & Machines';
+
+  @override
+  String get quizComicBooksUniverse => 'Comic Books Universe';
+
+  @override
+  String get quizCoolTechGadgets => 'Cool Tech & Gadgets';
+
+  @override
+  String get quizAnimeWorlds => 'Anime Worlds Quiz';
+
+  @override
+  String get quizCartoonsAnimations => 'Cartoons & Animations';
+
+  @override
+  String get descUltimateGeneralKnowledge =>
+      'Test your brain across a wide range of topics from science to pop culture.';
+
+  @override
+  String get descFamousBooksAuthors =>
+      'Can you match famous books to their legendary authors?';
+
+  @override
+  String get descClassicMovieTrivia =>
+      'Dive into the world of cinema and recall timeless classics.';
+
+  @override
+  String get descMusicLegendsLyrics =>
+      'Guess songs, artists, and iconic lyrics from music history.';
+
+  @override
+  String get descMusicalsTheatresMix =>
+      'Challenge your memory of stage shows and legendary musicals.';
+
+  @override
+  String get descTvSeriesCharacters =>
+      'How well do you know your favorite TV shows and characters?';
+
+  @override
+  String get descVideoGameUniverse =>
+      'From retro games to modern hits — test your gaming knowledge!';
+
+  @override
+  String get descBoardGamesChallenge =>
+      'Chess, Monopoly, and more — explore board games trivia.';
+
+  @override
+  String get descScienceNatureInsights =>
+      'Discover fascinating facts about science, nature, and the universe.';
+
+  @override
+  String get descComputerScienceBasics =>
+      'Explore coding, algorithms, and the evolution of computers.';
+
+  @override
+  String get descMathematicalMinds =>
+      'Numbers, formulas, and logic — challenge your math skills.';
+
+  @override
+  String get descGreekNorseMythology =>
+      'Meet gods, heroes, and myths from ancient Greece and Norse lands.';
+
+  @override
+  String get descUltimateSportsTrivia =>
+      'From football to Olympics — test your sports knowledge!';
+
+  @override
+  String get descWorldGeographyExplorer =>
+      'Travel around the world with geography and landmark quizzes.';
+
+  @override
+  String get descWorldHistoryEssentials =>
+      'Key events and figures that shaped our world — how many can you name?';
+
+  @override
+  String get descPoliticsWorldLeaders =>
+      'Learn about global leaders, ideologies, and political systems.';
+
+  @override
+  String get descMasterpiecesArt =>
+      'Famous artists, movements, and timeless masterpieces await.';
+
+  @override
+  String get descCelebritiesPopCulture =>
+      'From Hollywood to TikTok — pop culture at its finest.';
+
+  @override
+  String get descAnimalsAroundWorld =>
+      'Learn fun and amazing facts about animals across the globe.';
+
+  @override
+  String get descCarsBikesMachines =>
+      'Engines, brands, and innovations — for every motorhead.';
+
+  @override
+  String get descComicBooksUniverse =>
+      'Marvel, DC, and beyond — heroes, villains, and stories.';
+
+  @override
+  String get descCoolTechGadgets =>
+      'Test your knowledge of modern inventions and gadgets.';
+
+  @override
+  String get descAnimeWorlds =>
+      'Explore anime worlds, characters, and legendary series.';
+
+  @override
+  String get descCartoonsAnimations =>
+      'From Disney to Pixar — classic and modern animation trivia.';
+
+  @override
+  String get browseNoCoursesFound => 'No courses found matching your search.';
 }
