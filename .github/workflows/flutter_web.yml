@@ -8,29 +8,24 @@ on:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'master' }}
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Setup Flutter
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
 
-      # 3. Install dependencies
       - name: Install dependencies
         run: flutter pub get
 
-      # 4. Build web
       - name: Build web
         run: flutter build web --release --base-href /${{ github.event.repository.name }}/
 
-      # 5. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
