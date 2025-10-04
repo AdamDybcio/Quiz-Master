@@ -74,9 +74,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get error => 'Error';
 
   @override
-  String get keepPracticing => 'Keep Practicing!';
-
-  @override
   String get correct => 'Correct';
 
   @override
@@ -111,4 +108,50 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skip => 'Skip';
+
+  @override
+  String get difficultyEasy => 'Easy';
+
+  @override
+  String get difficultyEasyDescription =>
+      'Perfect for beginners and casual learning';
+
+  @override
+  String get difficultyMedium => 'Medium';
+
+  @override
+  String get difficultyMediumDescription =>
+      'A balanced challenge for most players';
+
+  @override
+  String get difficultyHard => 'Hard';
+
+  @override
+  String get difficultyHardDescription =>
+      'For experts seeking maximum challenge';
+
+  @override
+  String get chooseYourDifficulty => 'Choose Your Difficulty';
+
+  @override
+  String get chooseYourDifficultyDesc =>
+      'Higher difficulty means more XP rewards!';
+
+  @override
+  String get resultExcellent => 'Outstanding! 🏆';
+
+  @override
+  String get resultVeryGood => 'Great job! 🌟';
+
+  @override
+  String get resultGood => 'Well done! 👍';
+
+  @override
+  String get resultAverage => 'Not bad! 💪';
+
+  @override
+  String get resultPoor => 'Keep practicing! 📚';
+
+  @override
+  String get resultVeryPoor => 'Don’t give up! 💫';
 }

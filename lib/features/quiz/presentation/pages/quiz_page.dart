@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quiz_master/features/leveling/data/constants/difficulties.dart';
 import 'package:quiz_master/features/quiz/presentation/blocs/quiz/quiz_cubit.dart';
 import 'package:quiz_master/features/quiz/presentation/blocs/quiz_run/quiz_run_cubit.dart';
 import 'package:quiz_master/features/quiz/presentation/pages/quiz_run_page.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
+import 'package:quiz_master/utils/extensions.dart';
 import 'package:quiz_master/utils/helpers.dart';
 
 class QuizPage extends StatelessWidget {
-  const QuizPage({super.key});
+  final Difficulties difficulty;
+  const QuizPage({super.key, required this.difficulty});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +37,11 @@ class QuizPage extends StatelessWidget {
                 );
               } else if (state is QuizLoaded) {
                 return BlocProvider(
-                  create: (_) => QuizRunCubit(state.questions),
-                  child: QuizRunPage(),
+                  create: (_) => QuizRunCubit(
+                    state.questions,
+                    difficulty.timePerQuestion.inSeconds,
+                  ),
+                  child: QuizRunPage(difficulty: difficulty),
                 );
               } else if (state is QuizError) {
                 return Center(

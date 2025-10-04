@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quiz_master/features/leveling/data/constants/difficulties.dart';
 import 'package:quiz_master/features/quiz/presentation/blocs/quiz_run/quiz_run_cubit.dart';
 import 'package:quiz_master/features/quiz/presentation/blocs/quiz_run/quiz_run_state.dart';
 import 'package:quiz_master/features/quiz/presentation/widgets/animated_answer_card.dart';
-import 'package:quiz_master/features/quiz/presentation/widgets/hover_chip.dart'
-    show HoverChip;
+import 'package:quiz_master/features/quiz/presentation/widgets/hover_chip.dart';
 import 'package:quiz_master/features/quiz/presentation/widgets/question_card_wrapper.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
+import 'package:quiz_master/utils/extensions.dart';
 
 import '../widgets/quiz_summary.dart';
 
 class QuizRunPage extends StatelessWidget {
-  const QuizRunPage({super.key});
+  final Difficulties difficulty;
+  const QuizRunPage({super.key, required this.difficulty});
 
   @override
   Widget build(BuildContext context) {
@@ -34,19 +36,20 @@ class QuizRunPage extends StatelessWidget {
         final currentQuestion = state.currentIndex + 1;
 
         final questionProgress = currentQuestion / totalQuestions;
-        final timeProgress = state.timeLeft / 30;
+        final timeProgress =
+            state.timeLeft / difficulty.timePerQuestion.inSeconds;
 
         return SafeArea(
           child: SizedBox.expand(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 900),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Row(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(16),
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 900),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -77,8 +80,11 @@ class QuizRunPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 12),
-                      TweenAnimationBuilder<double>(
+                    ),
+                    const SizedBox(height: 12),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 900),
+                      child: TweenAnimationBuilder<double>(
                         tween: Tween<double>(begin: 0, end: questionProgress),
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeOut,
@@ -92,8 +98,11 @@ class QuizRunPage extends StatelessWidget {
                           );
                         },
                       ),
-                      const SizedBox(height: 6),
-                      TweenAnimationBuilder<double>(
+                    ),
+                    const SizedBox(height: 6),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 900),
+                      child: TweenAnimationBuilder<double>(
                         tween: Tween<double>(begin: 0, end: timeProgress),
                         duration: const Duration(milliseconds: 500),
                         builder: (context, value, child) {
@@ -106,8 +115,11 @@ class QuizRunPage extends StatelessWidget {
                           );
                         },
                       ),
-                      const SizedBox(height: 24),
-                      Row(
+                    ),
+                    const SizedBox(height: 24),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 900),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           HoverChip(
@@ -131,14 +143,20 @@ class QuizRunPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 24),
-                      QuestionCardWrapper(
+                    ),
+                    const SizedBox(height: 24),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 900),
+                      child: QuestionCardWrapper(
                         key: ValueKey(state.currentIndex),
                         question: question.question,
                         exitDuration: const Duration(milliseconds: 500),
                       ),
-                      const SizedBox(height: 24),
-                      Column(
+                    ),
+                    const SizedBox(height: 24),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 900),
+                      child: Column(
                         children: List.generate(
                           question.shuffledAnswers.length,
                           (index) {
@@ -157,8 +175,8 @@ class QuizRunPage extends StatelessWidget {
                           },
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),

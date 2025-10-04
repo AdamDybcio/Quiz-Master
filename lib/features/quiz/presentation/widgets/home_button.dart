@@ -39,7 +39,8 @@ class HomeButtonState extends State<HomeButton> {
           AppLocalizations.of(context)!.home,
           style: const TextStyle(fontSize: 14),
         ),
-        onPressed: () => Navigator.of(context).pop(),
+        onPressed: () =>
+            Navigator.of(context).popUntil((route) => route.isFirst),
       ),
     );
   }

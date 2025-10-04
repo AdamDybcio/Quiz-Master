@@ -6,17 +6,19 @@ import 'package:quiz_master/features/quiz/presentation/blocs/quiz_run/quiz_run_s
 
 class QuizRunCubit extends Cubit<QuizRunState> {
   Timer? _timer;
-  int _questionStartTime = 30;
+  int _questionStartTime = 20;
 
-  QuizRunCubit(List<Question> questions)
-    : super(QuizRunState(questions: questions)) {
+  QuizRunCubit(List<Question> questions, int timePerQuestion)
+    : super(
+        QuizRunState(questions: questions, timePerQuestion: timePerQuestion),
+      ) {
     _startTimer();
   }
 
   void _startTimer() {
     _timer?.cancel();
-    emit(state.copyWith(timeLeft: 30));
-    _questionStartTime = 30;
+    emit(state.copyWith(timeLeft: state.timePerQuestion));
+    _questionStartTime = state.timePerQuestion;
 
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (state.timeLeft > 1) {

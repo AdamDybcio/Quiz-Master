@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/leveling/presentation/pages/leveling_difficulty_page.dart';
 import 'package:quiz_master/features/quiz/domain/entity/question.dart';
-import 'package:quiz_master/features/quiz/domain/entity/quiz_params.dart';
-import 'package:quiz_master/features/quiz/presentation/blocs/quiz/quiz_cubit.dart';
-import 'package:quiz_master/features/quiz/presentation/pages/quiz_page.dart';
-import 'package:quiz_master/features/quiz/presentation/widgets/home_button.dart'
-    show HomeButton;
+import 'package:quiz_master/features/quiz/presentation/widgets/home_button.dart';
 import 'package:quiz_master/features/quiz/presentation/widgets/quiz_answer_review.dart';
 import 'package:quiz_master/features/quiz/presentation/widgets/quiz_summary_stats.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
+import 'package:quiz_master/utils/helpers.dart';
 
 class QuizSummary extends StatefulWidget {
   final int score;
@@ -105,11 +101,7 @@ class _QuizSummaryState extends State<QuizSummary>
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => BlocProvider(
-                          create: (_) =>
-                              sl<QuizCubit>()..loadQuiz(QuizParams(amount: 10)),
-                          child: QuizPage(),
-                        ),
+                        builder: (_) => LevelingDifficultyPage(),
                       ),
                     );
                   },
@@ -158,7 +150,7 @@ class _QuizSummaryState extends State<QuizSummary>
               ),
               const SizedBox(height: 16),
               Text(
-                "${AppLocalizations.of(context)!.keepPracticing} 💪",
+                Helpers.getResultText(context, percentage),
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 28,

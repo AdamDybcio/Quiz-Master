@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
-import 'package:quiz_master/di.dart';
-import 'package:quiz_master/features/quiz/domain/entity/quiz_params.dart';
-import 'package:quiz_master/features/quiz/presentation/blocs/quiz/quiz_cubit.dart';
-import 'package:quiz_master/features/quiz/presentation/pages/quiz_page.dart';
+import 'package:quiz_master/features/leveling/presentation/pages/leveling_difficulty_page.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 
 class QuickPlayButton extends StatefulWidget {
@@ -85,13 +81,7 @@ class _QuickPlayButtonState extends State<QuickPlayButton>
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (_) => BlocProvider(
-                        create: (_) =>
-                            sl<QuizCubit>()..loadQuiz(QuizParams(amount: 10)),
-                        child: QuizPage(),
-                      ),
-                    ),
+                    MaterialPageRoute(builder: (_) => LevelingDifficultyPage()),
                   );
                 },
                 icon: const FaIcon(FontAwesomeIcons.bolt, size: 24),
