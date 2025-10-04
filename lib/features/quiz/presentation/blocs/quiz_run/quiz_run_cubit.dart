@@ -45,6 +45,9 @@ class QuizRunCubit extends Cubit<QuizRunState> {
   }
 
   void answer(String answer) {
+    if (state.isLocked) return;
+    _timer?.cancel();
+
     final q = state.questions[state.currentIndex];
     final isCorrect = answer == q.correctAnswer;
 
@@ -63,12 +66,15 @@ class QuizRunCubit extends Cubit<QuizRunState> {
 
     emit(
       state.copyWith(
+        isLocked: true,
+        selectedAnswer: answer,
         score: isCorrect ? state.score + 1 : state.score,
         userAnswers: updatedAnswers,
       ),
     );
-
-    nextQuestion();
+    Future.delayed(const Duration(seconds: 1), () {
+      nextQuestion();
+    });
   }
 
   void nextQuestion() {
@@ -77,6 +83,8 @@ class QuizRunCubit extends Cubit<QuizRunState> {
         state.copyWith(
           currentIndex: state.currentIndex + 1,
           disabledAnswers: [],
+          isLocked: false,
+          selectedAnswer: null,
         ),
       );
       _startTimer();

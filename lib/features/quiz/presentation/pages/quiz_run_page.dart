@@ -28,6 +28,7 @@ class QuizRunPage extends StatelessWidget {
             answerTimes: state.answerTimes,
             questions: state.questions,
             userAnswers: state.userAnswers,
+            difficulty: difficulty,
           );
         }
 
@@ -167,7 +168,9 @@ class QuizRunPage extends StatelessWidget {
                               key: ValueKey('${state.currentIndex}_$answer'),
                               index: index,
                               label: label,
+                              isSelected: state.selectedAnswer == answer,
                               answer: answer,
+                              isLocked: state.isLocked,
                               disabled: state.disabledAnswers.contains(answer),
                               onTap: () =>
                                   context.read<QuizRunCubit>().answer(answer),

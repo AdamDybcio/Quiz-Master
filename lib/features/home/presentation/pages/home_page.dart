@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_master/core/presentation/widgets/responsive.dart';
 import 'package:quiz_master/core/presentation/widgets/theme_toggle_button.dart';
 import 'package:quiz_master/features/home/presentation/widgets/categories_section.dart';
 import 'package:quiz_master/features/home/presentation/widgets/home_page_footer.dart';
 import 'package:quiz_master/features/home/presentation/widgets/home_page_header.dart';
 import 'package:quiz_master/features/home/presentation/widgets/info_card_section.dart';
 import 'package:quiz_master/features/home/presentation/widgets/quick_play_button.dart';
+import 'package:quiz_master/features/leveling/presentation/widgets/level_card.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 import 'package:quiz_master/utils/helpers.dart';
 
@@ -18,7 +20,11 @@ class HomePage extends StatelessWidget {
         animateColor: true,
         title: Padding(
           padding: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width * 0.15,
+            left: Responsive.isMobile(context)
+                ? 0
+                : Responsive.isTablet(context)
+                ? 16
+                : MediaQuery.of(context).size.width * 0.15,
           ),
           child: ShaderMask(
             shaderCallback: (bounds) => const LinearGradient(
@@ -36,9 +42,23 @@ class HomePage extends StatelessWidget {
           ),
         ),
         actionsPadding: EdgeInsets.only(
-          right: MediaQuery.of(context).size.width * 0.15,
+          right: Responsive.isMobile(context)
+              ? 0
+              : Responsive.isTablet(context)
+              ? 16
+              : MediaQuery.of(context).size.width * 0.15,
         ),
-        actions: [ThemeToggleButton()],
+        actions: [
+          ThemeToggleButton(),
+          SizedBox(
+            width: Responsive.isMobile(context)
+                ? 6
+                : Responsive.isTablet(context)
+                ? 8
+                : 16,
+          ),
+          LevelCard(),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(

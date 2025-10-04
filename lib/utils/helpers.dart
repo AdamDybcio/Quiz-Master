@@ -16,4 +16,28 @@ class Helpers {
     if (percentage >= 0.2) return l10n.resultPoor;
     return l10n.resultVeryPoor;
   }
+
+  static double calculateXp({
+    required double accuracy,
+    required double avgAnswerTime,
+    required int totalQuestions,
+    required double difficultyMultiplier,
+  }) {
+    const baseXpPerQuestion = 10.0;
+
+    final speedMultiplier = (10 / avgAnswerTime).clamp(1.0, 2.0);
+
+    double xp =
+        totalQuestions *
+        baseXpPerQuestion *
+        accuracy *
+        difficultyMultiplier *
+        speedMultiplier;
+
+    if (accuracy == 1.0) {
+      xp += 100 * difficultyMultiplier;
+    }
+
+    return xp.roundToDouble();
+  }
 }

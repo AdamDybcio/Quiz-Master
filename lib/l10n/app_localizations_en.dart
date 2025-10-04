@@ -154,4 +154,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resultVeryPoor => 'Don’t give up! 💫';
+
+  @override
+  String get experienceEarned => 'XP Earned';
+
+  @override
+  String get difficulty => 'Difficulty';
+
+  @override
+  String get level => 'Level';
 }

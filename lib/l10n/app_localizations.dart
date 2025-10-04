@@ -375,6 +375,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Don’t give up! 💫'**
   String get resultVeryPoor;
+
+  /// No description provided for @experienceEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'XP Earned'**
+  String get experienceEarned;
+
+  /// No description provided for @difficulty.
+  ///
+  /// In en, this message translates to:
+  /// **'Difficulty'**
+  String get difficulty;
+
+  /// No description provided for @level.
+  ///
+  /// In en, this message translates to:
+  /// **'Level'**
+  String get level;
 }
 
 class _AppLocalizationsDelegate

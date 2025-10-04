@@ -45,5 +45,8 @@
     "resultGood": "Well done! 👍",
     "resultAverage": "Not bad! 💪",
     "resultPoor": "Keep practicing! 📚",
-    "resultVeryPoor": "Don’t give up! 💫"
+    "resultVeryPoor": "Don’t give up! 💫",
+    "experienceEarned": "XP Earned",
+    "difficulty": "Difficulty",
+    "level": "Level"
 }

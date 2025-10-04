@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quiz_master/features/leveling/data/constants/difficulties.dart';
 import 'package:quiz_master/features/leveling/presentation/pages/leveling_difficulty_page.dart';
 import 'package:quiz_master/features/quiz/domain/entity/question.dart';
 import 'package:quiz_master/features/quiz/presentation/widgets/home_button.dart';
@@ -15,6 +16,7 @@ class QuizSummary extends StatefulWidget {
   final List<int> answerTimes;
   final List<Question> questions;
   final List<String?> userAnswers;
+  final Difficulties difficulty;
 
   const QuizSummary({
     super.key,
@@ -24,6 +26,7 @@ class QuizSummary extends StatefulWidget {
     required this.answerTimes,
     required this.questions,
     required this.userAnswers,
+    required this.difficulty,
   });
 
   @override
@@ -67,6 +70,7 @@ class _QuizSummaryState extends State<QuizSummary>
             const SizedBox(height: 24),
             QuizSummaryStats(
               score: widget.score,
+              difficulty: widget.difficulty,
               totalQuestions: widget.totalQuestions,
               totalTime: widget.totalTime,
               answerTimes: widget.answerTimes,
