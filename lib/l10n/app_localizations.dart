@@ -220,12 +220,6 @@ abstract class AppLocalizations {
   /// **'Error'**
   String get error;
 
-  /// No description provided for @keepPracticing.
-  ///
-  /// In en, this message translates to:
-  /// **'Keep Practicing!'**
-  String get keepPracticing;
-
   /// No description provided for @correct.
   ///
   /// In en, this message translates to:
@@ -297,6 +291,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Skip'**
   String get skip;
+
+  /// No description provided for @difficultyEasy.
+  ///
+  /// In en, this message translates to:
+  /// **'Easy'**
+  String get difficultyEasy;
+
+  /// No description provided for @difficultyEasyDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Perfect for beginners and casual learning'**
+  String get difficultyEasyDescription;
+
+  /// No description provided for @difficultyMedium.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get difficultyMedium;
+
+  /// No description provided for @difficultyMediumDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A balanced challenge for most players'**
+  String get difficultyMediumDescription;
+
+  /// No description provided for @difficultyHard.
+  ///
+  /// In en, this message translates to:
+  /// **'Hard'**
+  String get difficultyHard;
+
+  /// No description provided for @difficultyHardDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'For experts seeking maximum challenge'**
+  String get difficultyHardDescription;
+
+  /// No description provided for @chooseYourDifficulty.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Your Difficulty'**
+  String get chooseYourDifficulty;
+
+  /// No description provided for @chooseYourDifficultyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Higher difficulty means more XP rewards!'**
+  String get chooseYourDifficultyDesc;
+
+  /// No description provided for @resultExcellent.
+  ///
+  /// In en, this message translates to:
+  /// **'Outstanding! 🏆'**
+  String get resultExcellent;
+
+  /// No description provided for @resultVeryGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Great job! 🌟'**
+  String get resultVeryGood;
+
+  /// No description provided for @resultGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done! 👍'**
+  String get resultGood;
+
+  /// No description provided for @resultAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Not bad! 💪'**
+  String get resultAverage;
+
+  /// No description provided for @resultPoor.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep practicing! 📚'**
+  String get resultPoor;
+
+  /// No description provided for @resultVeryPoor.
+  ///
+  /// In en, this message translates to:
+  /// **'Don’t give up! 💫'**
+  String get resultVeryPoor;
+
+  /// No description provided for @experienceEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'XP Earned'**
+  String get experienceEarned;
+
+  /// No description provided for @difficulty.
+  ///
+  /// In en, this message translates to:
+  /// **'Difficulty'**
+  String get difficulty;
+
+  /// No description provided for @level.
+  ///
+  /// In en, this message translates to:
+  /// **'Level'**
+  String get level;
+
+  /// No description provided for @browse.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse'**
+  String get browse;
+
+  /// No description provided for @achievements.
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements'**
+  String get achievements;
 }
 
 class _AppLocalizationsDelegate

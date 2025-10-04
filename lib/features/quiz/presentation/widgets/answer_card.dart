@@ -6,6 +6,7 @@ class AnswerCard extends StatefulWidget {
   final String label;
   final bool disabled;
   final VoidCallback? onTap;
+  final bool isSelected;
 
   const AnswerCard({
     super.key,
@@ -13,6 +14,7 @@ class AnswerCard extends StatefulWidget {
     required this.label,
     this.disabled = false,
     this.onTap,
+    required this.isSelected,
   });
 
   @override
@@ -30,15 +32,23 @@ class _AnswerCardState extends State<AnswerCard> {
 
   @override
   Widget build(BuildContext context) {
-    final bgColor = widget.disabled
+    final bgColor = widget.isSelected
+        ? Colors.deepPurpleAccent
+        : widget.disabled
         ? null
         : _hovering
-        ? Helpers.isDarkMode(context)
-              ? Colors.teal
-              : Colors.teal.shade300
+        ? Colors.purpleAccent
         : Helpers.isDarkMode(context)
         ? Colors.black.withAlpha(150)
         : Colors.white;
+
+    final answerColor = widget.isSelected
+        ? Colors.greenAccent
+        : widget.disabled
+        ? Colors.grey.shade500
+        : _hovering
+        ? Colors.amberAccent
+        : Colors.indigoAccent;
 
     return MouseRegion(
       onEnter: (_) => _setHover(true),
@@ -67,9 +77,7 @@ class _AnswerCardState extends State<AnswerCard> {
               Text(
                 widget.label,
                 style: TextStyle(
-                  color: widget.disabled
-                      ? Colors.grey.shade500
-                      : Colors.deepPurpleAccent,
+                  color: answerColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
                 ),
@@ -79,7 +87,7 @@ class _AnswerCardState extends State<AnswerCard> {
                 child: Text(
                   widget.answer,
                   style: TextStyle(
-                    color: widget.disabled
+                    color: widget.disabled && !widget.isSelected
                         ? Colors.grey.shade500
                         : Helpers.isDarkMode(context)
                         ? Colors.white

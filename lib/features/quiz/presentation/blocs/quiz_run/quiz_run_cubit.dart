@@ -6,17 +6,19 @@ import 'package:quiz_master/features/quiz/presentation/blocs/quiz_run/quiz_run_s
 
 class QuizRunCubit extends Cubit<QuizRunState> {
   Timer? _timer;
-  int _questionStartTime = 30;
+  int _questionStartTime = 20;
 
-  QuizRunCubit(List<Question> questions)
-    : super(QuizRunState(questions: questions)) {
+  QuizRunCubit(List<Question> questions, int timePerQuestion)
+    : super(
+        QuizRunState(questions: questions, timePerQuestion: timePerQuestion),
+      ) {
     _startTimer();
   }
 
   void _startTimer() {
     _timer?.cancel();
-    emit(state.copyWith(timeLeft: 30));
-    _questionStartTime = 30;
+    emit(state.copyWith(timeLeft: state.timePerQuestion));
+    _questionStartTime = state.timePerQuestion;
 
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (state.timeLeft > 1) {
@@ -43,6 +45,9 @@ class QuizRunCubit extends Cubit<QuizRunState> {
   }
 
   void answer(String answer) {
+    if (state.isLocked) return;
+    _timer?.cancel();
+
     final q = state.questions[state.currentIndex];
     final isCorrect = answer == q.correctAnswer;
 
@@ -61,12 +66,15 @@ class QuizRunCubit extends Cubit<QuizRunState> {
 
     emit(
       state.copyWith(
+        isLocked: true,
+        selectedAnswer: answer,
         score: isCorrect ? state.score + 1 : state.score,
         userAnswers: updatedAnswers,
       ),
     );
-
-    nextQuestion();
+    Future.delayed(const Duration(seconds: 1), () {
+      nextQuestion();
+    });
   }
 
   void nextQuestion() {
@@ -75,6 +83,8 @@ class QuizRunCubit extends Cubit<QuizRunState> {
         state.copyWith(
           currentIndex: state.currentIndex + 1,
           disabledAnswers: [],
+          isLocked: false,
+          selectedAnswer: null,
         ),
       );
       _startTimer();

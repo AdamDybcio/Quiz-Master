@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
-import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/leveling/presentation/pages/leveling_difficulty_page.dart';
 import 'package:quiz_master/features/quiz/data/constants/categories.dart';
-import 'package:quiz_master/features/quiz/domain/entity/quiz_params.dart';
-import 'package:quiz_master/features/quiz/presentation/blocs/quiz/quiz_cubit.dart';
-import 'package:quiz_master/features/quiz/presentation/pages/quiz_page.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 import 'package:quiz_master/utils/helpers.dart';
 
@@ -174,13 +170,8 @@ class _AnimatedCategoryCardState extends State<_AnimatedCategoryCard>
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => BlocProvider(
-                create: (_) => sl<QuizCubit>()
-                  ..loadQuiz(
-                    QuizParams(amount: 10, category: widget.category.id),
-                  ),
-                child: QuizPage(),
-              ),
+              builder: (_) =>
+                  LevelingDifficultyPage(category: widget.category.id),
             ),
           );
         },

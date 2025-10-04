@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
+import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/leveling/data/constants/difficulties.dart';
+import 'package:quiz_master/features/leveling/presentation/blocs/user_level/user_level_bloc.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 import 'package:quiz_master/utils/helpers.dart';
 
 class QuizSummaryStats extends StatelessWidget {
   final int score;
-  final int totalQuestions;
   final Duration totalTime;
   final List<int> answerTimes;
+  final Difficulties difficulty;
+  final int totalQuestions;
 
   const QuizSummaryStats({
     super.key,
     required this.score,
-    required this.totalQuestions,
     required this.totalTime,
     required this.answerTimes,
+    required this.difficulty,
+    required this.totalQuestions,
   });
 
   @override
@@ -23,9 +28,19 @@ class QuizSummaryStats extends StatelessWidget {
     final accuracy = totalQuestions > 0
         ? (score / totalQuestions * 100).round()
         : 0;
+
     final avgTimePerQuestion = answerTimes.isNotEmpty
         ? answerTimes.reduce((a, b) => a + b) ~/ answerTimes.length
         : 0;
+
+    final experienceEarned = Helpers.calculateXp(
+      accuracy: accuracy / 100,
+      avgAnswerTime: avgTimePerQuestion.toDouble(),
+      totalQuestions: totalQuestions,
+      difficultyMultiplier: difficulty.multiplier,
+    );
+
+    sl<UserLevelBloc>().add(AddXp(experienceEarned.toInt()));
 
     Widget buildStatTile(
       IconData icon,
@@ -94,12 +109,12 @@ class QuizSummaryStats extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              buildStatTile(
-                FontAwesomeIcons.circleCheck,
-                AppLocalizations.of(context)!.accuracy,
-                "$accuracy%",
-                Colors.deepPurpleAccent,
-              ),
+              // buildStatTile(
+              //   FontAwesomeIcons.circleCheck,
+              //   AppLocalizations.of(context)!.accuracy,
+              //   "$accuracy%",
+              //   Colors.deepPurpleAccent,
+              // ),
               buildStatTile(
                 FontAwesomeIcons.clock,
                 AppLocalizations.of(context)!.totalTime,
@@ -120,14 +135,14 @@ class QuizSummaryStats extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                child: buildStatTile(
-                  FontAwesomeIcons.circleCheck,
-                  AppLocalizations.of(context)!.accuracy,
-                  "$accuracy%",
-                  Colors.deepPurpleAccent,
-                ),
-              ),
+              // Expanded(
+              //   child: buildStatTile(
+              //     FontAwesomeIcons.circleCheck,
+              //     AppLocalizations.of(context)!.accuracy,
+              //     "$accuracy%",
+              //     Colors.deepPurpleAccent,
+              //   ),
+              // ),
               Expanded(
                 child: buildStatTile(
                   FontAwesomeIcons.clock,
@@ -154,26 +169,38 @@ class QuizSummaryStats extends StatelessWidget {
             children: [
               Expanded(
                 child: buildStatTile(
-                  FontAwesomeIcons.circleCheck,
-                  AppLocalizations.of(context)!.accuracy,
-                  "$accuracy%",
+                  FontAwesomeIcons.clock,
+                  AppLocalizations.of(context)!.totalTime,
+                  "${totalTime.inMinutes}m ${totalTime.inSeconds % 60}s",
                   Colors.deepPurpleAccent,
                 ),
               ),
               Expanded(
                 child: buildStatTile(
-                  FontAwesomeIcons.clock,
-                  AppLocalizations.of(context)!.totalTime,
-                  "${totalTime.inMinutes}m ${totalTime.inSeconds % 60}s",
+                  FontAwesomeIcons.brain,
+                  AppLocalizations.of(context)!.avgTime,
+                  "${avgTimePerQuestion}s",
                   Colors.teal,
                 ),
               ),
               Expanded(
                 child: buildStatTile(
+                  FontAwesomeIcons.solidStar,
+                  AppLocalizations.of(context)!.experienceEarned,
+                  experienceEarned.toStringAsFixed(0),
+                  Colors.orangeAccent,
+                ),
+              ),
+              Expanded(
+                child: buildStatTile(
                   FontAwesomeIcons.bolt,
-                  AppLocalizations.of(context)!.avgTime,
-                  "${avgTimePerQuestion}s",
-                  Colors.teal,
+                  AppLocalizations.of(context)!.difficulty,
+                  difficulty.title,
+                  difficulty.apiValue == 'easy'
+                      ? Colors.green
+                      : difficulty.apiValue == 'medium'
+                      ? Colors.yellow
+                      : Colors.red,
                 ),
               ),
             ],

@@ -7,6 +7,8 @@ class AnimatedAnswerCard extends StatefulWidget {
   final bool disabled;
   final VoidCallback? onTap;
   final int index;
+  final bool isLocked;
+  final bool isSelected;
 
   const AnimatedAnswerCard({
     super.key,
@@ -15,6 +17,8 @@ class AnimatedAnswerCard extends StatefulWidget {
     this.disabled = false,
     this.onTap,
     required this.index,
+    required this.isLocked,
+    required this.isSelected,
   });
 
   @override
@@ -65,7 +69,8 @@ class _AnimatedAnswerCardState extends State<AnimatedAnswerCard>
         child: AnswerCard(
           label: widget.label,
           answer: widget.answer,
-          disabled: widget.disabled,
+          isSelected: widget.isSelected,
+          disabled: widget.disabled || widget.isLocked,
           onTap: widget.onTap,
         ),
       ),
