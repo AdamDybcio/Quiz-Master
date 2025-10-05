@@ -1,0 +1,65 @@
+name: Deploy & Build Flutter App
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      # --- Testing and analysis ---
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test
+
+      # --- Build Web ---
+      - name: Build Web
+        run: flutter build web --release --base-href /${{ github.event.repository.name }}/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+
+      # --- Build Android APK ---
+      - name: Build Android APK
+        run: flutter build apk --release
+
+      - name: Rename and Upload APK artifact
+        run: |
+          mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/QuizMaster.apk
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        with:
+          name: QuizMaster.apk
+          path: build/app/outputs/flutter-apk/QuizMaster.apk
+
+      # --- Build iOS IPA (temporary off) ---
+      # - name: Build iOS IPA
+      #   run: flutter build ipa --release
+
+      # - name: Rename and Upload IPA artifact
+      #   run: |
+      #     mv build/ios/ipa/*.ipa build/ios/ipa/QuizMaster.ipa
+      #   shell: bash
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: QuizMaster.ipa
+      #     path: build/ios/ipa/QuizMaster.ipa

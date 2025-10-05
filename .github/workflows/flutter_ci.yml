@@ -1,19 +1,22 @@
-name: Flutter CI
+name: Flutter CI (feature branches)
 
 on:
   push:
-    branches:
-      - '**'
-  pull_request:
-    branches:
+    branches-ignore:
       - master
+      - gh-pages
+  pull_request:
+    branches-ignore:
+      - master
+      - gh-pages
 
 jobs:
   analyze_and_test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
