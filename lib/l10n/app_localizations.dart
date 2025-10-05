@@ -955,7 +955,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementSpeedsterSilverDesc.
   ///
   /// In en, this message translates to:
-  /// **'Complete a quiz under 45 seconds with 80%+ score'**
+  /// **'Complete a quiz under 50 seconds with 80%+ score'**
   String get achievementSpeedsterSilverDesc;
 
   /// No description provided for @achievementSpeedsterGoldTitle.
@@ -967,7 +967,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementSpeedsterGoldDesc.
   ///
   /// In en, this message translates to:
-  /// **'Complete a quiz under 30 seconds with 80%+ score'**
+  /// **'Complete a quiz under 40 seconds with 80%+ score'**
   String get achievementSpeedsterGoldDesc;
 
   /// No description provided for @achievementSpeedsterPlatinumTitle.
@@ -979,7 +979,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementSpeedsterPlatinumDesc.
   ///
   /// In en, this message translates to:
-  /// **'Complete a quiz under 20 seconds with 80%+ score'**
+  /// **'Complete a quiz under 30 seconds with 80%+ score'**
   String get achievementSpeedsterPlatinumDesc;
 
   /// No description provided for @achievementSpeedsterDiamondTitle.
@@ -991,7 +991,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementSpeedsterDiamondDesc.
   ///
   /// In en, this message translates to:
-  /// **'Complete a quiz under 10 seconds with 80%+ score'**
+  /// **'Complete a quiz under 25 seconds with 80%+ score'**
   String get achievementSpeedsterDiamondDesc;
 
   /// No description provided for @achievementSpeedsterMasterTitle.
@@ -1003,8 +1003,68 @@ abstract class AppLocalizations {
   /// No description provided for @achievementSpeedsterMasterDesc.
   ///
   /// In en, this message translates to:
-  /// **'Complete a quiz under 5 seconds with 80%+ score'**
+  /// **'Complete a quiz under 20 seconds with 80%+ score'**
   String get achievementSpeedsterMasterDesc;
+
+  /// No description provided for @trackProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your progress and unlock badges'**
+  String get trackProgress;
+
+  /// No description provided for @unlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked'**
+  String get unlocked;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterAll;
+
+  /// No description provided for @filterLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get filterLocked;
+
+  /// No description provided for @achievementCategoryLevelingDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress through levels by completing quizzes and challenges.'**
+  String get achievementCategoryLevelingDesc;
+
+  /// No description provided for @achievementCategoryAnswerMasterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Show your mastery by answering questions correctly and consistently.'**
+  String get achievementCategoryAnswerMasterDesc;
+
+  /// No description provided for @achievementCategoryQuizAbuserDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn achievements for completing a high number of quizzes.'**
+  String get achievementCategoryQuizAbuserDesc;
+
+  /// No description provided for @achievementCategorySpeedsterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock achievements for completing quizzes quickly and efficiently.'**
+  String get achievementCategorySpeedsterDesc;
+
+  /// No description provided for @notUnlockedYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Unlocked Yet'**
+  String get notUnlockedYet;
+
+  /// No description provided for @nextAchievement.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextAchievement;
 }
 
 class _AppLocalizationsDelegate

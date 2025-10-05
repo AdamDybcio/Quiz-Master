@@ -204,3 +204,19 @@ List<Achievement> getAchievements(BuildContext context) {
     ),
   ];
 }
+
+String getAchievementCategoryDescription(
+  BuildContext context,
+  AchievementCategory category,
+) {
+  switch (category) {
+    case AchievementCategory.leveling:
+      return AppLocalizations.of(context)!.achievementCategoryLevelingDesc;
+    case AchievementCategory.answerMaster:
+      return AppLocalizations.of(context)!.achievementCategoryAnswerMasterDesc;
+    case AchievementCategory.quizAbuser:
+      return AppLocalizations.of(context)!.achievementCategoryQuizAbuserDesc;
+    case AchievementCategory.speedster:
+      return AppLocalizations.of(context)!.achievementCategorySpeedsterDesc;
+  }
+}

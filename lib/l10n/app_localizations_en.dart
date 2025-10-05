@@ -482,33 +482,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementSpeedsterSilverDesc =>
-      'Complete a quiz under 45 seconds with 80%+ score';
+      'Complete a quiz under 50 seconds with 80%+ score';
 
   @override
   String get achievementSpeedsterGoldTitle => 'Speedster Export';
 
   @override
   String get achievementSpeedsterGoldDesc =>
-      'Complete a quiz under 30 seconds with 80%+ score';
+      'Complete a quiz under 40 seconds with 80%+ score';
 
   @override
   String get achievementSpeedsterPlatinumTitle => 'Speedster Master';
 
   @override
   String get achievementSpeedsterPlatinumDesc =>
-      'Complete a quiz under 20 seconds with 80%+ score';
+      'Complete a quiz under 30 seconds with 80%+ score';
 
   @override
   String get achievementSpeedsterDiamondTitle => 'Speedster Legend';
 
   @override
   String get achievementSpeedsterDiamondDesc =>
-      'Complete a quiz under 10 seconds with 80%+ score';
+      'Complete a quiz under 25 seconds with 80%+ score';
 
   @override
   String get achievementSpeedsterMasterTitle => 'Speedster Grandmaster';
 
   @override
   String get achievementSpeedsterMasterDesc =>
-      'Complete a quiz under 5 seconds with 80%+ score';
+      'Complete a quiz under 20 seconds with 80%+ score';
+
+  @override
+  String get trackProgress => 'Track your progress and unlock badges';
+
+  @override
+  String get unlocked => 'Unlocked';
+
+  @override
+  String get filterAll => 'All';
+
+  @override
+  String get filterLocked => 'Locked';
+
+  @override
+  String get achievementCategoryLevelingDesc =>
+      'Progress through levels by completing quizzes and challenges.';
+
+  @override
+  String get achievementCategoryAnswerMasterDesc =>
+      'Show your mastery by answering questions correctly and consistently.';
+
+  @override
+  String get achievementCategoryQuizAbuserDesc =>
+      'Earn achievements for completing a high number of quizzes.';
+
+  @override
+  String get achievementCategorySpeedsterDesc =>
+      'Unlock achievements for completing quizzes quickly and efficiently.';
+
+  @override
+  String get notUnlockedYet => 'Not Unlocked Yet';
+
+  @override
+  String get nextAchievement => 'Next';
 }

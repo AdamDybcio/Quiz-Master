@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
 import 'package:quiz_master/core/presentation/widgets/theme_toggle_button.dart';
+import 'package:quiz_master/features/achievements/presentation/widgets/achievements_content.dart';
 import 'package:quiz_master/features/leveling/presentation/widgets/level_card.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 import 'package:quiz_master/utils/helpers.dart';
@@ -71,7 +72,12 @@ class AchievementPage extends StatelessWidget {
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [],
+                children: [
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 900),
+                    child: const AchievementsContent(),
+                  ),
+                ],
               ),
             ),
           ),

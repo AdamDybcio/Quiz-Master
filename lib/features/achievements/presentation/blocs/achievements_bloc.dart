@@ -163,35 +163,35 @@ class AchievementsBloc
         AchievementLevel.bronze,
       );
     }
-    if (bestQuizTimeSeconds <= 45) {
+    if (bestQuizTimeSeconds <= 50) {
       _unlockIfHigher(
         unlocked,
         AchievementCategory.speedster,
         AchievementLevel.silver,
       );
     }
-    if (bestQuizTimeSeconds <= 30) {
+    if (bestQuizTimeSeconds <= 40) {
       _unlockIfHigher(
         unlocked,
         AchievementCategory.speedster,
         AchievementLevel.gold,
       );
     }
-    if (bestQuizTimeSeconds <= 20) {
+    if (bestQuizTimeSeconds <= 30) {
       _unlockIfHigher(
         unlocked,
         AchievementCategory.speedster,
         AchievementLevel.platinum,
       );
     }
-    if (bestQuizTimeSeconds <= 10) {
+    if (bestQuizTimeSeconds <= 25) {
       _unlockIfHigher(
         unlocked,
         AchievementCategory.speedster,
         AchievementLevel.diamond,
       );
     }
-    if (bestQuizTimeSeconds <= 5) {
+    if (bestQuizTimeSeconds <= 20) {
       _unlockIfHigher(
         unlocked,
         AchievementCategory.speedster,
