@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quiz_master/core/presentation/blocs/page_index_cubit.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
@@ -15,6 +16,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FlutterNativeSplash.remove();
     final pages = const [HomePage(), BrowsePage(), AchievementPage()];
 
     return Responsive(
