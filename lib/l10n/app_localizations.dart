@@ -717,6 +717,354 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No courses found matching your search.'**
   String get browseNoCoursesFound;
+
+  /// No description provided for @achievementLevelingBronzeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leveling Apprentice'**
+  String get achievementLevelingBronzeTitle;
+
+  /// No description provided for @achievementLevelingBronzeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach Level 5'**
+  String get achievementLevelingBronzeDesc;
+
+  /// No description provided for @achievementLevelingSilverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leveling Adept'**
+  String get achievementLevelingSilverTitle;
+
+  /// No description provided for @achievementLevelingSilverDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach Level 10'**
+  String get achievementLevelingSilverDesc;
+
+  /// No description provided for @achievementLevelingGoldTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leveling Expert'**
+  String get achievementLevelingGoldTitle;
+
+  /// No description provided for @achievementLevelingGoldDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach Level 20'**
+  String get achievementLevelingGoldDesc;
+
+  /// No description provided for @achievementLevelingPlatinumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leveling Master'**
+  String get achievementLevelingPlatinumTitle;
+
+  /// No description provided for @achievementLevelingPlatinumDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach Level 30'**
+  String get achievementLevelingPlatinumDesc;
+
+  /// No description provided for @achievementLevelingDiamondTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leveling Legend'**
+  String get achievementLevelingDiamondTitle;
+
+  /// No description provided for @achievementLevelingDiamondDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach Level 50'**
+  String get achievementLevelingDiamondDesc;
+
+  /// No description provided for @achievementLevelingMasterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Leveling Grandmaster'**
+  String get achievementLevelingMasterTitle;
+
+  /// No description provided for @achievementLevelingMasterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Reach Level 100'**
+  String get achievementLevelingMasterDesc;
+
+  /// No description provided for @achievementAnswerMasterBronzeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Apprentice'**
+  String get achievementAnswerMasterBronzeTitle;
+
+  /// No description provided for @achievementAnswerMasterBronzeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer 10 Questions Correctly'**
+  String get achievementAnswerMasterBronzeDesc;
+
+  /// No description provided for @achievementAnswerMasterSilverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Adept'**
+  String get achievementAnswerMasterSilverTitle;
+
+  /// No description provided for @achievementAnswerMasterSilverDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer 25 Questions Correctly'**
+  String get achievementAnswerMasterSilverDesc;
+
+  /// No description provided for @achievementAnswerMasterGoldTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Expert'**
+  String get achievementAnswerMasterGoldTitle;
+
+  /// No description provided for @achievementAnswerMasterGoldDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer 50 Questions Correctly'**
+  String get achievementAnswerMasterGoldDesc;
+
+  /// No description provided for @achievementAnswerMasterPlatinumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Master'**
+  String get achievementAnswerMasterPlatinumTitle;
+
+  /// No description provided for @achievementAnswerMasterPlatinumDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer 100 Questions Correctly'**
+  String get achievementAnswerMasterPlatinumDesc;
+
+  /// No description provided for @achievementAnswerMasterDiamondTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Legend'**
+  String get achievementAnswerMasterDiamondTitle;
+
+  /// No description provided for @achievementAnswerMasterDiamondDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer 200 Questions Correctly'**
+  String get achievementAnswerMasterDiamondDesc;
+
+  /// No description provided for @achievementAnswerMasterMasterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Grandmaster'**
+  String get achievementAnswerMasterMasterTitle;
+
+  /// No description provided for @achievementAnswerMasterMasterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer 500 Questions Correctly'**
+  String get achievementAnswerMasterMasterDesc;
+
+  /// No description provided for @achievementQuizAbuserBronzeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Novice'**
+  String get achievementQuizAbuserBronzeTitle;
+
+  /// No description provided for @achievementQuizAbuserBronzeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 5 quizzes with 80%+ score'**
+  String get achievementQuizAbuserBronzeDesc;
+
+  /// No description provided for @achievementQuizAbuserSilverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Enthusiast'**
+  String get achievementQuizAbuserSilverTitle;
+
+  /// No description provided for @achievementQuizAbuserSilverDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 10 quizzes with 80%+ score'**
+  String get achievementQuizAbuserSilverDesc;
+
+  /// No description provided for @achievementQuizAbuserGoldTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Fanatic'**
+  String get achievementQuizAbuserGoldTitle;
+
+  /// No description provided for @achievementQuizAbuserGoldDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 25 quizzes with 80%+ score'**
+  String get achievementQuizAbuserGoldDesc;
+
+  /// No description provided for @achievementQuizAbuserPlatinumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Maniac'**
+  String get achievementQuizAbuserPlatinumTitle;
+
+  /// No description provided for @achievementQuizAbuserPlatinumDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 50 quizzes with 80%+ score'**
+  String get achievementQuizAbuserPlatinumDesc;
+
+  /// No description provided for @achievementQuizAbuserDiamondTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Legend'**
+  String get achievementQuizAbuserDiamondTitle;
+
+  /// No description provided for @achievementQuizAbuserDiamondDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 100 quizzes with 80%+ score'**
+  String get achievementQuizAbuserDiamondDesc;
+
+  /// No description provided for @achievementQuizAbuserMasterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiz Grandmaster'**
+  String get achievementQuizAbuserMasterTitle;
+
+  /// No description provided for @achievementQuizAbuserMasterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete 250 quizzes with 80%+ score'**
+  String get achievementQuizAbuserMasterDesc;
+
+  /// No description provided for @achievementSpeedsterBronzeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Speedster Novice'**
+  String get achievementSpeedsterBronzeTitle;
+
+  /// No description provided for @achievementSpeedsterBronzeDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a quiz under 60 seconds with 80%+ score'**
+  String get achievementSpeedsterBronzeDesc;
+
+  /// No description provided for @achievementSpeedsterSilverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Speedster Adept'**
+  String get achievementSpeedsterSilverTitle;
+
+  /// No description provided for @achievementSpeedsterSilverDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a quiz under 50 seconds with 80%+ score'**
+  String get achievementSpeedsterSilverDesc;
+
+  /// No description provided for @achievementSpeedsterGoldTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Speedster Export'**
+  String get achievementSpeedsterGoldTitle;
+
+  /// No description provided for @achievementSpeedsterGoldDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a quiz under 40 seconds with 80%+ score'**
+  String get achievementSpeedsterGoldDesc;
+
+  /// No description provided for @achievementSpeedsterPlatinumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Speedster Master'**
+  String get achievementSpeedsterPlatinumTitle;
+
+  /// No description provided for @achievementSpeedsterPlatinumDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a quiz under 30 seconds with 80%+ score'**
+  String get achievementSpeedsterPlatinumDesc;
+
+  /// No description provided for @achievementSpeedsterDiamondTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Speedster Legend'**
+  String get achievementSpeedsterDiamondTitle;
+
+  /// No description provided for @achievementSpeedsterDiamondDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a quiz under 25 seconds with 80%+ score'**
+  String get achievementSpeedsterDiamondDesc;
+
+  /// No description provided for @achievementSpeedsterMasterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Speedster Grandmaster'**
+  String get achievementSpeedsterMasterTitle;
+
+  /// No description provided for @achievementSpeedsterMasterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete a quiz under 20 seconds with 80%+ score'**
+  String get achievementSpeedsterMasterDesc;
+
+  /// No description provided for @trackProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your progress and unlock badges'**
+  String get trackProgress;
+
+  /// No description provided for @unlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked'**
+  String get unlocked;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterAll;
+
+  /// No description provided for @filterLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get filterLocked;
+
+  /// No description provided for @achievementCategoryLevelingDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress through levels by completing quizzes and challenges.'**
+  String get achievementCategoryLevelingDesc;
+
+  /// No description provided for @achievementCategoryAnswerMasterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Show your mastery by answering questions correctly and consistently.'**
+  String get achievementCategoryAnswerMasterDesc;
+
+  /// No description provided for @achievementCategoryQuizAbuserDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn achievements for completing a high number of quizzes.'**
+  String get achievementCategoryQuizAbuserDesc;
+
+  /// No description provided for @achievementCategorySpeedsterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock achievements for completing quizzes quickly and efficiently.'**
+  String get achievementCategorySpeedsterDesc;
+
+  /// No description provided for @notUnlockedYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Unlocked Yet'**
+  String get notUnlockedYet;
+
+  /// No description provided for @nextAchievement.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextAchievement;
 }
 
 class _AppLocalizationsDelegate

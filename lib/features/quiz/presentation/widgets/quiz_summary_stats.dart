@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
 import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/achievements/presentation/blocs/achievements_bloc.dart';
 import 'package:quiz_master/features/leveling/data/constants/difficulties.dart';
 import 'package:quiz_master/features/leveling/presentation/blocs/user_level/user_level_bloc.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
@@ -41,6 +42,15 @@ class QuizSummaryStats extends StatelessWidget {
     );
 
     sl<UserLevelBloc>().add(AddXp(experienceEarned.toInt()));
+    final currentLevel = sl<UserLevelBloc>().state.level;
+    sl<AchievementsBloc>().add(
+      CheckAchievements(
+        quizCount: accuracy >= 80 ? 1 : 0,
+        correctAnswers: score,
+        level: currentLevel,
+        quizTimeSeconds: accuracy >= 80 ? totalTime.inSeconds : 9999,
+      ),
+    );
 
     Widget buildStatTile(
       IconData icon,
@@ -109,12 +119,6 @@ class QuizSummaryStats extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // buildStatTile(
-              //   FontAwesomeIcons.circleCheck,
-              //   AppLocalizations.of(context)!.accuracy,
-              //   "$accuracy%",
-              //   Colors.deepPurpleAccent,
-              // ),
               buildStatTile(
                 FontAwesomeIcons.clock,
                 AppLocalizations.of(context)!.totalTime,
@@ -127,6 +131,22 @@ class QuizSummaryStats extends StatelessWidget {
                 "${avgTimePerQuestion}s",
                 Colors.teal,
               ),
+              buildStatTile(
+                FontAwesomeIcons.solidStar,
+                AppLocalizations.of(context)!.experienceEarned,
+                experienceEarned.toStringAsFixed(0),
+                Colors.orangeAccent,
+              ),
+              buildStatTile(
+                FontAwesomeIcons.bolt,
+                AppLocalizations.of(context)!.difficulty,
+                difficulty.title,
+                difficulty.apiValue == 'easy'
+                    ? Colors.green
+                    : difficulty.apiValue == 'medium'
+                    ? Colors.yellow
+                    : Colors.red,
+              ),
             ],
           ),
         ),
@@ -135,14 +155,6 @@ class QuizSummaryStats extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Expanded(
-              //   child: buildStatTile(
-              //     FontAwesomeIcons.circleCheck,
-              //     AppLocalizations.of(context)!.accuracy,
-              //     "$accuracy%",
-              //     Colors.deepPurpleAccent,
-              //   ),
-              // ),
               Expanded(
                 child: buildStatTile(
                   FontAwesomeIcons.clock,
@@ -157,6 +169,26 @@ class QuizSummaryStats extends StatelessWidget {
                   AppLocalizations.of(context)!.avgTime,
                   "${avgTimePerQuestion}s",
                   Colors.teal,
+                ),
+              ),
+              Expanded(
+                child: buildStatTile(
+                  FontAwesomeIcons.solidStar,
+                  AppLocalizations.of(context)!.experienceEarned,
+                  experienceEarned.toStringAsFixed(0),
+                  Colors.orangeAccent,
+                ),
+              ),
+              Expanded(
+                child: buildStatTile(
+                  FontAwesomeIcons.bolt,
+                  AppLocalizations.of(context)!.difficulty,
+                  difficulty.title,
+                  difficulty.apiValue == 'easy'
+                      ? Colors.green
+                      : difficulty.apiValue == 'medium'
+                      ? Colors.yellow
+                      : Colors.red,
                 ),
               ),
             ],

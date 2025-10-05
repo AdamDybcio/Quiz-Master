@@ -350,4 +350,199 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get browseNoCoursesFound => 'No courses found matching your search.';
+
+  @override
+  String get achievementLevelingBronzeTitle => 'Leveling Apprentice';
+
+  @override
+  String get achievementLevelingBronzeDesc => 'Reach Level 5';
+
+  @override
+  String get achievementLevelingSilverTitle => 'Leveling Adept';
+
+  @override
+  String get achievementLevelingSilverDesc => 'Reach Level 10';
+
+  @override
+  String get achievementLevelingGoldTitle => 'Leveling Expert';
+
+  @override
+  String get achievementLevelingGoldDesc => 'Reach Level 20';
+
+  @override
+  String get achievementLevelingPlatinumTitle => 'Leveling Master';
+
+  @override
+  String get achievementLevelingPlatinumDesc => 'Reach Level 30';
+
+  @override
+  String get achievementLevelingDiamondTitle => 'Leveling Legend';
+
+  @override
+  String get achievementLevelingDiamondDesc => 'Reach Level 50';
+
+  @override
+  String get achievementLevelingMasterTitle => 'Leveling Grandmaster';
+
+  @override
+  String get achievementLevelingMasterDesc => 'Reach Level 100';
+
+  @override
+  String get achievementAnswerMasterBronzeTitle => 'Answer Apprentice';
+
+  @override
+  String get achievementAnswerMasterBronzeDesc =>
+      'Answer 10 Questions Correctly';
+
+  @override
+  String get achievementAnswerMasterSilverTitle => 'Answer Adept';
+
+  @override
+  String get achievementAnswerMasterSilverDesc =>
+      'Answer 25 Questions Correctly';
+
+  @override
+  String get achievementAnswerMasterGoldTitle => 'Answer Expert';
+
+  @override
+  String get achievementAnswerMasterGoldDesc => 'Answer 50 Questions Correctly';
+
+  @override
+  String get achievementAnswerMasterPlatinumTitle => 'Answer Master';
+
+  @override
+  String get achievementAnswerMasterPlatinumDesc =>
+      'Answer 100 Questions Correctly';
+
+  @override
+  String get achievementAnswerMasterDiamondTitle => 'Answer Legend';
+
+  @override
+  String get achievementAnswerMasterDiamondDesc =>
+      'Answer 200 Questions Correctly';
+
+  @override
+  String get achievementAnswerMasterMasterTitle => 'Answer Grandmaster';
+
+  @override
+  String get achievementAnswerMasterMasterDesc =>
+      'Answer 500 Questions Correctly';
+
+  @override
+  String get achievementQuizAbuserBronzeTitle => 'Quiz Novice';
+
+  @override
+  String get achievementQuizAbuserBronzeDesc =>
+      'Complete 5 quizzes with 80%+ score';
+
+  @override
+  String get achievementQuizAbuserSilverTitle => 'Quiz Enthusiast';
+
+  @override
+  String get achievementQuizAbuserSilverDesc =>
+      'Complete 10 quizzes with 80%+ score';
+
+  @override
+  String get achievementQuizAbuserGoldTitle => 'Quiz Fanatic';
+
+  @override
+  String get achievementQuizAbuserGoldDesc =>
+      'Complete 25 quizzes with 80%+ score';
+
+  @override
+  String get achievementQuizAbuserPlatinumTitle => 'Quiz Maniac';
+
+  @override
+  String get achievementQuizAbuserPlatinumDesc =>
+      'Complete 50 quizzes with 80%+ score';
+
+  @override
+  String get achievementQuizAbuserDiamondTitle => 'Quiz Legend';
+
+  @override
+  String get achievementQuizAbuserDiamondDesc =>
+      'Complete 100 quizzes with 80%+ score';
+
+  @override
+  String get achievementQuizAbuserMasterTitle => 'Quiz Grandmaster';
+
+  @override
+  String get achievementQuizAbuserMasterDesc =>
+      'Complete 250 quizzes with 80%+ score';
+
+  @override
+  String get achievementSpeedsterBronzeTitle => 'Speedster Novice';
+
+  @override
+  String get achievementSpeedsterBronzeDesc =>
+      'Complete a quiz under 60 seconds with 80%+ score';
+
+  @override
+  String get achievementSpeedsterSilverTitle => 'Speedster Adept';
+
+  @override
+  String get achievementSpeedsterSilverDesc =>
+      'Complete a quiz under 50 seconds with 80%+ score';
+
+  @override
+  String get achievementSpeedsterGoldTitle => 'Speedster Export';
+
+  @override
+  String get achievementSpeedsterGoldDesc =>
+      'Complete a quiz under 40 seconds with 80%+ score';
+
+  @override
+  String get achievementSpeedsterPlatinumTitle => 'Speedster Master';
+
+  @override
+  String get achievementSpeedsterPlatinumDesc =>
+      'Complete a quiz under 30 seconds with 80%+ score';
+
+  @override
+  String get achievementSpeedsterDiamondTitle => 'Speedster Legend';
+
+  @override
+  String get achievementSpeedsterDiamondDesc =>
+      'Complete a quiz under 25 seconds with 80%+ score';
+
+  @override
+  String get achievementSpeedsterMasterTitle => 'Speedster Grandmaster';
+
+  @override
+  String get achievementSpeedsterMasterDesc =>
+      'Complete a quiz under 20 seconds with 80%+ score';
+
+  @override
+  String get trackProgress => 'Track your progress and unlock badges';
+
+  @override
+  String get unlocked => 'Unlocked';
+
+  @override
+  String get filterAll => 'All';
+
+  @override
+  String get filterLocked => 'Locked';
+
+  @override
+  String get achievementCategoryLevelingDesc =>
+      'Progress through levels by completing quizzes and challenges.';
+
+  @override
+  String get achievementCategoryAnswerMasterDesc =>
+      'Show your mastery by answering questions correctly and consistently.';
+
+  @override
+  String get achievementCategoryQuizAbuserDesc =>
+      'Earn achievements for completing a high number of quizzes.';
+
+  @override
+  String get achievementCategorySpeedsterDesc =>
+      'Unlock achievements for completing quizzes quickly and efficiently.';
+
+  @override
+  String get notUnlockedYet => 'Not Unlocked Yet';
+
+  @override
+  String get nextAchievement => 'Next';
 }
