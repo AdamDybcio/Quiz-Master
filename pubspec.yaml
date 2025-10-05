@@ -33,6 +33,10 @@ dependencies:
   # Splash
   flutter_native_splash: ^2.4.6
 
+  # Tests
+  mocktail: ^1.0.4
+  fake_async: ^1.3.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
