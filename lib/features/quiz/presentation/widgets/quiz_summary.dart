@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/achievements/data/constants/achievements_list.dart';
+import 'package:quiz_master/features/achievements/presentation/blocs/achievements_bloc.dart';
 import 'package:quiz_master/features/leveling/data/constants/difficulties.dart';
 import 'package:quiz_master/features/leveling/presentation/pages/leveling_difficulty_page.dart';
 import 'package:quiz_master/features/quiz/domain/entity/question.dart';
@@ -7,6 +11,7 @@ import 'package:quiz_master/features/quiz/presentation/widgets/home_button.dart'
 import 'package:quiz_master/features/quiz/presentation/widgets/quiz_answer_review.dart';
 import 'package:quiz_master/features/quiz/presentation/widgets/quiz_summary_stats.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
+import 'package:quiz_master/utils/enums.dart';
 import 'package:quiz_master/utils/helpers.dart';
 
 class QuizSummary extends StatefulWidget {
@@ -61,61 +66,85 @@ class _QuizSummaryState extends State<QuizSummary>
         ? widget.score / widget.totalQuestions
         : 0;
 
-    return SizedBox.expand(
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 48),
-            _buildAnimatedCard(context, percentage),
-            const SizedBox(height: 24),
-            QuizSummaryStats(
-              score: widget.score,
-              difficulty: widget.difficulty,
-              totalQuestions: widget.totalQuestions,
-              totalTime: widget.totalTime,
-              answerTimes: widget.answerTimes,
-            ),
-            const SizedBox(height: 24),
-            QuizAnswerReview(
-              questions: widget.questions,
-              userAnswers: widget.userAnswers,
-            ),
-            const SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurpleAccent,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 48,
-                      vertical: 24,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  icon: const FaIcon(FontAwesomeIcons.rotateLeft),
-                  label: Text(
-                    AppLocalizations.of(context)!.playAgain,
-                    style: const TextStyle(fontSize: 14),
-                  ),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => LevelingDifficultyPage(),
+    Map<AchievementCategory, AchievementLevel> previousUnlockedLevels =
+        sl<AchievementsBloc>().state.unlockedLevels;
+
+    return BlocListener<AchievementsBloc, AchievementsState>(
+      bloc: sl<AchievementsBloc>(),
+      listener: (achievementsContext, achievementsState) {
+        achievementsState.unlockedLevels.forEach((category, newLevel) {
+          final oldLevel = previousUnlockedLevels[category];
+
+          if (oldLevel == null || newLevel.index > oldLevel.index) {
+            final achievement = getAchievements(context).firstWhere(
+              (a) =>
+                  a.category.index == category.index &&
+                  a.level.index == newLevel.index,
+              orElse: () => throw Exception('Achievement not found'),
+            );
+
+            Helpers.showAchievementDialog(context, achievement: achievement);
+          }
+        });
+
+        previousUnlockedLevels = Map.from(achievementsState.unlockedLevels);
+      },
+      child: SizedBox.expand(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 48),
+              _buildAnimatedCard(context, percentage),
+              const SizedBox(height: 24),
+              QuizSummaryStats(
+                score: widget.score,
+                difficulty: widget.difficulty,
+                totalQuestions: widget.totalQuestions,
+                totalTime: widget.totalTime,
+                answerTimes: widget.answerTimes,
+              ),
+              const SizedBox(height: 24),
+              QuizAnswerReview(
+                questions: widget.questions,
+                userAnswers: widget.userAnswers,
+              ),
+              const SizedBox(height: 24),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.deepPurpleAccent,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 48,
+                        vertical: 24,
                       ),
-                    );
-                  },
-                ),
-                const SizedBox(width: 16),
-                HomeButton(),
-              ],
-            ),
-            const SizedBox(height: 24),
-          ],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    icon: const FaIcon(FontAwesomeIcons.rotateLeft),
+                    label: Text(
+                      AppLocalizations.of(context)!.playAgain,
+                      style: const TextStyle(fontSize: 14),
+                    ),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => LevelingDifficultyPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(width: 16),
+                  HomeButton(),
+                ],
+              ),
+              const SizedBox(height: 24),
+            ],
+          ),
         ),
       ),
     );

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quiz_master/core/presentation/blocs/page_index_cubit.dart';
 import 'package:quiz_master/core/presentation/widgets/responsive.dart';
 import 'package:quiz_master/di.dart';
+import 'package:quiz_master/features/achievements/presentation/pages/achievement_page.dart';
 import 'package:quiz_master/features/browse/presentation/pages/browse_page.dart';
 import 'package:quiz_master/features/home/presentation/pages/home_page.dart';
 
@@ -14,7 +15,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pages = const [HomePage(), BrowsePage(), HomePage()];
+    final pages = const [HomePage(), BrowsePage(), AchievementPage()];
 
     return Responsive(
       mobile: BlocBuilder<PageIndexCubit, int>(

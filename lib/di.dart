@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_master/core/presentation/blocs/page_index_cubit.dart';
 import 'package:quiz_master/core/presentation/blocs/theme_cubit.dart';
+import 'package:quiz_master/features/achievements/presentation/blocs/achievements_bloc.dart';
 import 'package:quiz_master/features/browse/presentation/blocs/browse/browse_bloc.dart';
 import 'package:quiz_master/features/leveling/presentation/blocs/user_level/user_level_bloc.dart';
 import 'package:quiz_master/features/quiz/data/datasource/quiz_remote_data_source.dart';
@@ -29,4 +30,5 @@ void setup() {
   sl.registerLazySingleton(() => UserLevelBloc());
 
   sl.registerLazySingleton<BrowseBloc>(() => BrowseBloc());
+  sl.registerLazySingleton<AchievementsBloc>(() => AchievementsBloc());
 }

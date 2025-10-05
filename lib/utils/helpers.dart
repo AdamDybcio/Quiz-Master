@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_master/features/achievements/data/model/achievement.dart';
+import 'package:quiz_master/features/achievements/presentation/widgets/achievement_overlay.dart';
 import 'package:quiz_master/l10n/app_localizations.dart';
 
 class Helpers {
@@ -39,5 +41,12 @@ class Helpers {
     }
 
     return xp.roundToDouble();
+  }
+
+  static void showAchievementDialog(
+    BuildContext context, {
+    required Achievement achievement,
+  }) {
+    AchievementOverlay().show(context, achievement: achievement);
   }
 }
